@@ -12,6 +12,13 @@ def calk(a: int, b: int) -> int:
         c = a / b
         return int(c)
 
+def minus(a, b):
+    if type(a)==str or type(b)==str:
+        return 'TypeError'
+    return a-b
+
+
 
 if __name__ == "__main__":
     print(calk(2, 2))
+    print(minus(5, 2))
