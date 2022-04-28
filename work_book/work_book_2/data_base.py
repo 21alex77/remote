@@ -24,7 +24,10 @@ def plusse(a, b):
     return a + b
 
 
-text='Hello'
+def cat(a: str) -> str:
+    if type(a) == int or type(a) == float:
+        return 'TypeError'
+    return f'мяу-мяу {a}'
 
 
 if __name__ == "__main__":

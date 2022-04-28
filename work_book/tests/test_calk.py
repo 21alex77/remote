@@ -1,4 +1,4 @@
-from work_book.work_book_2.data_base import calk, minus, plusse
+from work_book.work_book_2.data_base import calk, minus, plusse, cat
 
 if __name__ == "__main__":
     assert calk(4, 2) == 2
@@ -24,3 +24,6 @@ if __name__ == "__main__":
     assert plusse(-6, 5) == -1
     assert plusse(-4, -2) == -6
     assert plusse(100, 52) == 152
+
+    assert cat('dsfsd')=='мяу-мяу dsfsd'
+    assert cat(2)== 'TypeError'
