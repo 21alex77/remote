@@ -29,6 +29,7 @@ def cat(a: str) -> str:
         return 'TypeError'
     return f'мяу-мяу {a}'
 
+c='text'
 
 if __name__ == "__main__":
     print(calk(2, 2))
