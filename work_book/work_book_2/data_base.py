@@ -25,6 +25,8 @@ def plusse(a, b):
 
 c='text'
 
+f='ertyweew'
+
 
 if __name__ == "__main__":
     print(calk(2, 2))
