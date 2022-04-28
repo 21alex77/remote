@@ -23,9 +23,8 @@ def plusse(a, b):
         return 'TypeError'
     return a + b
 
-c='text'
 
-f='ertyweew'
+text='Hello'
 
 
 if __name__ == "__main__":
