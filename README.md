@@ -1,2 +1,0 @@
-# remote
-lessons for me

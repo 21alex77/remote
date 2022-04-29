@@ -1,6 +1,9 @@
+import pytest
+
 from work_book.work_book_2.data_base import calk, minus, plusse, cat
 
-if __name__ == "__main__":
+
+def test_calk():
     assert calk(4, 2) == 2
     assert calk(2, 0) == 'ZeroDivisionError'
     assert calk(2, 'f') == 'TypeError'
@@ -8,6 +11,8 @@ if __name__ == "__main__":
     assert calk('B', 'f') == 'TypeError'
     assert calk(4, 'dsfds') == 'TypeError'
 
+
+def test_minus():
     assert minus(4, 'g') == 'TypeError'
     assert minus('D', 7) == 'TypeError'
     assert minus('!', 0) == 'TypeError'
@@ -16,6 +21,8 @@ if __name__ == "__main__":
     assert minus(-67, 0) == -67
     assert minus(0, 56) == -56
 
+
+def test_plusse():
     assert plusse(6, 'd') == 'TypeError'
     assert plusse('G', 5) == 'TypeError'
     assert plusse('G', 5) == 'TypeError'
@@ -25,5 +32,11 @@ if __name__ == "__main__":
     assert plusse(-4, -2) == -6
     assert plusse(100, 52) == 152
 
-    assert cat('dsfsd')=='мяу-мяу dsfsd'
-    assert cat(2)== 'TypeError'
+
+def test_cat():
+    assert cat('dsfsd') == 'мяу-мяу dsfsd'
+    assert cat(2) == 'TypeError'
+
+
+if __name__ == "__main__":
+    pytest.main()
