@@ -47,8 +47,16 @@ def znak_analiz_minus(znak, a, b, point_integer=int):
         c = - point_integer(a) / point_integer(b)
         return c
 
-# def check_zero(a, b):
-#     pass
+
+def check_zero(text_list) -> bool:
+    caunt = 0
+    for i in text_list:
+        if '.' not in i and i[0] == '0':
+            caunt += 1
+    if caunt > 0:
+        return True
+    else:
+        return False
 
 
 def arithmetic(text: str) -> str:
@@ -57,7 +65,7 @@ def arithmetic(text: str) -> str:
     symbol_all = symbol + digit
     znak = ''
     point_float = False
-    znak_minus=False
+    znak_minus = False
     for i in text:
         if i == ',':
             return 'Запятая в числе, поставь точку!'
@@ -67,20 +75,26 @@ def arithmetic(text: str) -> str:
             znak = znak + i
         elif i == '.':
             point_float = True
-    if len(znak)>2 or len(text)==0:
+    if len(znak) > 2 or len(text) == 0:
         return 'Неизвестная операция'
-    elif len(znak)==2 and text[0]!='-':
+    elif len(znak) == 2 and text[0] != '-':
         return 'Неизвестная операция'
-    elif '-'==text[0]:
+    elif '-' == text[0]:
         znak_minus = True
-    if znak_minus==True:
-        text_list = text.split(znak[1])
-        text_list[0]=text_list[0].replace('-', '')
+    if znak_minus == True:
+        if znak[1]=='-':
+            text_list = text.split(znak[1])
+            text_list.remove('')
+        else:
+            text_list = text.split(znak[1])
+            text_list[0] = text_list[0].replace('-', '')
         a = text_list[0]
         b = text_list[1]
-        # check_zero(a, b)
+        zero = check_zero(text_list)
         if b == '0':
             return 'ZeroDivisionError'
+        elif zero == True:
+            return 'Неизвестная операция'
         elif point_float == True:
             e = znak_analiz_minus(znak, a, b, point_integer=float)
             return f'{e:.2f}'
@@ -94,9 +108,11 @@ def arithmetic(text: str) -> str:
         text_list = text.split(znak[0])
         a = text_list[0]
         b = text_list[1]
-        # check_zero(a, b)
+        zero = check_zero(text_list)
         if b == '0':
             return 'ZeroDivisionError'
+        elif zero == True:
+            return 'Неизвестная операция'
         elif point_float == True:
             d = znak_analiz(znak, a, b, point_integer=float)
             return f'{d:.2f}'
@@ -109,4 +125,4 @@ def arithmetic(text: str) -> str:
 
 
 if __name__ == "__main__":
-    print(arithmetic('-8529.8/5'))
+    print(arithmetic('-6-0005'))
