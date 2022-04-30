@@ -13,14 +13,23 @@ def test_arithmetic():
     assert arithmetic('3.6/2.1') == '1.71'
     assert arithmetic('2.4+6.5') == '8.90'
     assert arithmetic('852.98/8') == '106.62'
-    # assert arithmetic('-5+5') == '0'
+    assert arithmetic('-5+5') == '0'
+    assert arithmetic('-5.5+5.5') == '0.00'
+    assert arithmetic('-10+5') == '-5'
+    assert arithmetic('+523+5') == 'Неизвестная операция'
+    assert arithmetic('-5++5') == 'Неизвестная операция'
     assert arithmetic('5++6') == 'Неизвестная операция'
     assert arithmetic('') == 'Неизвестная операция'
     assert arithmetic('d/2') == 'Неизвестная операция'
     assert arithmetic('2f8') == 'Неизвестная операция'
     assert arithmetic('dfg') == 'Неизвестная операция'
+    # assert arithmetic('-5+05') == 'Неизвестная операция'
+    # assert arithmetic('-0005+05') == 'Неизвестная операция'
     assert arithmetic('2/0') == 'ZeroDivisionError'
+    assert arithmetic('-2.63/0') == 'ZeroDivisionError'
+    assert arithmetic('24464.63/0') == 'ZeroDivisionError'
     assert arithmetic('2,2/2') == 'Запятая в числе, поставь точку!'
+
 
 
 if __name__ == "__main__":
