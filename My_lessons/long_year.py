@@ -13,7 +13,7 @@
 def long_years(year: str) -> str:
     spisok_exceptions = (i for i in range(0, 1000000, 400))
     try:
-        int(year) == int
+        int(year)
     except ValueError:
         return 'Неизвестная операция'
     if year == '0' or int(year) < 0:
