@@ -1,6 +1,7 @@
 ------My lessons Python-----
-Made by Alexsandr
-Version 1.0
+Made by Alexsandr---
+Version 1.0---
+
 Description:
 
 Technology Used:

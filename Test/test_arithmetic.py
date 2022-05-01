@@ -1,5 +1,5 @@
 import pytest
-from My_lessons.simpl_arif_oper import arithmetic
+from My_lessons.arithmetic_operation import arithmetic
 
 
 def test_arithmetic():
